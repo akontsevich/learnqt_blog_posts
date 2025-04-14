@@ -42,7 +42,7 @@ ApplicationWindow {
         model: tableModelId
 
         delegate:  Label {
-            text: model.tabledata
+            text: model.display
             width: 100
             padding: 12
 

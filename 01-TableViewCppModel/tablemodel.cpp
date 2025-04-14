@@ -37,7 +37,7 @@ int TableModel::columnCount(const QModelIndex &) const
 QVariant TableModel::data(const QModelIndex &index, int role) const
 {
     switch (role) {
-    case TableDataRole:
+    case Qt::DisplayRole:
     {
         return  table.at(index.row()).at(index.column());
     }
@@ -78,12 +78,12 @@ QVariant TableModel::headerData(int section, Qt::Orientation orientation, int ro
 QHash<int, QByteArray> TableModel::roleNames() const
 {
     QHash<int, QByteArray> roles;
-    roles[TableDataRole] = "tabledata";
+    roles[Qt::DisplayRole] = "display";
     return roles;
 }
 
 QVariant TableModel::get_display_data(const QModelIndex &index){
-    return data(index,TableDataRole );
+    return data(index,Qt::DisplayRole );
 }
 
 

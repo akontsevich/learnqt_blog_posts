@@ -9,9 +9,7 @@ class TableModel : public QAbstractTableModel
 {
     Q_OBJECT
     QML_ELEMENT
-    enum TableRoles{
-        TableDataRole = Qt::UserRole + 1,
-    };
+
 public:
     explicit TableModel(QObject *parent = nullptr);
     int rowCount(const QModelIndex & = QModelIndex()) const override;
