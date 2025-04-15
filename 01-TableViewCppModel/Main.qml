@@ -13,6 +13,17 @@ ApplicationWindow {
         syncView: tableViewId
         clip: true
 
+        delegate:  Label {
+            text: model.display
+            padding: 12
+            color: "blue"
+
+            Rectangle {
+                anchors.fill: parent
+                color: "yellow"
+                z: -1
+            }
+        }
     }
 
     VerticalHeaderView {
