@@ -52,7 +52,7 @@ ApplicationWindow {
 
         model: tableModelId
 
-        delegate:  Label {
+        delegate: Label {
             text: model.display
             width: 100
             padding: 12
@@ -63,6 +63,14 @@ ApplicationWindow {
                 z: -1
             }
         }
+
+        columnWidthProvider: function (column) {
+           let w = explicitColumnWidth(column)
+           if (w >= 0)
+               return w
+           return Math.max(implicitColumnWidth(column),
+                           horizontalHeader.implicitColumnWidth(column))
+       }
     }
 
     Button{
